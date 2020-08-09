@@ -28,9 +28,9 @@ jobs:
     
     # Setup do node.js
     - name: Configurar node js
-    - uses: actions/setup-node@v2.1.1
-      with:
-        node_version: ${{ matrix.node_version }}
+      - uses: actions/setup-node@v2.1.1
+        with:
+          node_version: ${{ matrix.node_version }}
       
     # Instalar as dependencias
     - run: npm install
@@ -43,8 +43,8 @@ jobs:
 
     # Deploy para o pages
     - name: Deploy to GitHub Pages
-    - uses: JamesIves/github-pages-deploy-action@3.5.9
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: cypress/reports
+      - uses: JamesIves/github-pages-deploy-action@3.5.9
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: cypress/reports
